@@ -26,6 +26,10 @@
                 }
             }
         }
+        
+        function apriRicerca() {
+            window.open('https://www.TecnoCata.com', '_blank');
+        }
     </script>
 </head>
 
@@ -36,6 +40,7 @@
     <label for="nomeProprietario">Nome Proprietario del Plot:</label>
     <input type="text" id="nomeProprietario" onkeydown="ricercaCoordinate(event)">
     <button onclick="ricercaCoordinate(event)">Cerca Coordinate</button>
+    <button onclick="apriRicerca()">Apri Ricerca</button>
 
     <p id="risultato"></p>
 </body>
