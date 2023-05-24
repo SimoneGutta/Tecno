@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ricerca Coordinate Plot Tecno</title>
+    <script>
+        function ricercaCoordinate() {
+            // Ottenere il valore inserito dall'utente
+            var nomeProprietario = document.getElementById("nomeProprietario").value;
+
+            // Esempio di mappatura proprietario-coordinata
+            var coordinatePlot = {
+                "Proprietario1": "X: 100, Z: 200",
+                "Proprietario2": "X: 300, Z: 400",
+                "Proprietario3": "X: 500, Z: 600"
+                    // Aggiungi altri plot e coordinate secondo necessità
+            };
+
+            // Verifica se il nome del proprietario esiste nella mappatura
+            if (nomeProprietario in coordinatePlot) {
+                var coordinate = coordinatePlot[nomeProprietario];
+                document.getElementById("risultato").innerHTML = "Le coordinate del plot di " + nomeProprietario + " sono: " + coordinate;
+            } else {
+                document.getElementById("risultato").innerHTML = "Nessun plot trovato per " + nomeProprietario;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ricerca Coordinate Plot Minecraft</h1>
+
+    <label for="nomeProprietario">Nome Proprietario del Plot:</label>
+    <input type="text" id="nomeProprietario">
+    <button onclick="ricercaCoordinate()">Cerca Coordinate</button>
+
+    <p id="risultato"></p>
+</body>
+
+</html>
