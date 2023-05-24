@@ -4,24 +4,26 @@
 <head>
     <title>Ricerca Coordinate Plot Tecno</title>
     <script>
-        function ricercaCoordinate() {
-            // Ottenere il valore inserito dall'utente
-            var nomeProprietario = document.getElementById("nomeProprietario").value;
+        function ricercaCoordinate(event) {
+            if (event.keyCode === 13) { // Rileva la pressione del tasto "Invio"
+                // Ottenere il valore inserito dall'utente
+                var nomeProprietario = document.getElementById("nomeProprietario").value;
 
-            // Esempio di mappatura proprietario-coordinata
-            var coordinatePlot = {
-                "SickCata": "X: 65, Z: 200",
-                "Proprietario2": "X: 300, Z: 400",
-                "Proprietario3": "X: 500, Z: 600"
-                    // Aggiungi altri plot e coordinate secondo necessità
-            };
+                // Esempio di mappatura proprietario-coordinata
+                var coordinatePlot = {
+                    "SickCata": "X: 65, Z: 200",
+                    "Proprietario2": "X: 300, Z: 400",
+                    "Proprietario3": "X: 500, Z: 600"
+                        // Aggiungi altri plot e coordinate secondo necessità
+                };
 
-            // Verifica se il nome del proprietario esiste nella mappatura
-            if (nomeProprietario in coordinatePlot) {
-                var coordinate = coordinatePlot[nomeProprietario];
-                document.getElementById("risultato").innerHTML = "Le coordinate del plot di " + nomeProprietario + " sono: " + coordinate;
-            } else {
-                document.getElementById("risultato").innerHTML = "Nessun plot trovato per " + nomeProprietario;
+                // Verifica se il nome del proprietario esiste nella mappatura
+                if (nomeProprietario in coordinatePlot) {
+                    var coordinate = coordinatePlot[nomeProprietario];
+                    document.getElementById("risultato").innerHTML = "Le coordinate del plot di " + nomeProprietario + " sono: " + coordinate;
+                } else {
+                    document.getElementById("risultato").innerHTML = "Nessun plot trovato per " + nomeProprietario;
+                }
             }
         }
     </script>
@@ -32,8 +34,8 @@
     <h5>Aggiungere il nome completo</h5>
 
     <label for="nomeProprietario">Nome Proprietario del Plot:</label>
-    <input type="text" id="nomeProprietario">
-    <button onclick="ricercaCoordinate()">Cerca Coordinate</button>
+    <input type="text" id="nomeProprietario" onkeydown="ricercaCoordinate(event)">
+    <button onclick="ricercaCoordinate(event)">Cerca Coordinate</button>
 
     <p id="risultato"></p>
 </body>
