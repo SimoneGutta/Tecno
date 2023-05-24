@@ -4,6 +4,37 @@
 <head>
     <title>Ricerca Coordinate Plot Tecno</title>
     <script>
+        // Funzione per effettuare il login
+        function login() {
+            // Ottenere i valori inseriti dall'utente
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Effettuare la verifica dei dati di login
+            // Esempio di verifica semplice
+            if (username === "admin" && password === "password") {
+                alert("Accesso effettuato con successo!");
+            } else {
+                alert("Credenziali di accesso non valide!");
+            }
+        }
+
+        // Funzione per effettuare la registrazione
+        function register() {
+            // Ottenere i valori inseriti dall'utente
+            var newUsername = document.getElementById("newUsername").value;
+            var newPassword = document.getElementById("newPassword").value;
+
+            // Effettuare l'operazione di registrazione
+            // Esempio di salvataggio delle informazioni
+            // Qui puoi inserire il codice per salvare le informazioni nel modo che preferisci (ad esempio, database, file, ecc.)
+            // Esempio di salvataggio nel local storage del browser
+            localStorage.setItem("username", newUsername);
+            localStorage.setItem("password", newPassword);
+
+            alert("Registrazione effettuata con successo!");
+        }
+
         function ricercaCoordinate(event) {
             if (event.keyCode === 13) { // Rileva la pressione del tasto "Invio"
                 // Ottenere il valore inserito dall'utente
@@ -26,7 +57,7 @@
                 }
             }
         }
-        
+
         function apriRicerca() {
             window.open('https://www.TecnoCata.com', '_blank');
         }
@@ -43,6 +74,4 @@
     <button onclick="apriRicerca()">Apri Ricerca</button>
 
     <p id="risultato"></p>
-</body>
 
-</html>
